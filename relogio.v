@@ -88,10 +88,10 @@ assign enable = startstop & clk;
 assign nr = res & zera;
 
 /****** Cronometro *******/
-count100 centseg(clk,res,ud,centsc,outs);
-count59 seg(enable,nr,ud,sc,outs1);
-count59 min(~outs,nr,ud,mc,outs2);
-count23 hor(~outs1,nr,ud,hc);
+count100 centseg(enable,res,ud,centsc,outs);
+count59 seg(outs,nr,ud,sc,outs1);
+count59 min(~outs1,nr,ud,mc,outs2);
+count23 hor(~outs2,nr,ud,hc);
 
 /********* Relogio *********/
 count100 rcentseg(clk,res,1'b1,centsr,routs);
